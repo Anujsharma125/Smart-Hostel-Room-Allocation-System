@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Hostel System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Smart Hostel Room Allocation System</h2>
+
+  <div class="nav">
+    <button onclick="showSection('student')">Student Portal</button>
+    <button onclick="showSection('admin')">Admin Portal</button>
+  </div>
+
+  <!-- Student Section -->
+  <div id="student" class="section">
+    <h3>Student Registration</h3>
+    <form id="studentForm">
+      <input type="text" id="sName" placeholder="Name" required>
+      <input type="email" id="sEmail" placeholder="Email" required>
+      <select id="sGender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="number" id="sYear" placeholder="Year" min="1" max="4" required>
+      <button type="submit">Register</button>
+    </form>
+    <h4>Status</h4>
+    <div id="statusBox">No allocation yet.</div>
+  </div>
+
+  <!-- Admin Section -->
+  <div id="admin" class="section" style="display:none;">
+    <h3>Admin Panel</h3>
+    <form id="hostelForm">
+      <input type="text" id="hostelName" placeholder="Hostel Name" required>
+      <select id="policy">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="mixed">Mixed</option>
+      </select>
+      <button type="submit">Add Hostel</button>
+    </form>
+
+    <form id="roomForm">
+      <select id="roomHostel"></select>
+      <input type="text" id="roomNumber" placeholder="Room Number" required>
+      <input type="number" id="capacity" placeholder="Capacity" required>
+      <button type="submit">Add Room</button>
+    </form>
+
+    <button onclick="runAllocation()">Run Allocation</button>
+
+    <h4>Allocations</h4>
+    <div id="allocBox"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

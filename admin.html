@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Hostel - Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Smart Hostel Room Allocation (Admin)</h2>
+
+  <form id="hostelForm">
+    <input type="text" id="hostelName" placeholder="Hostel Name" required>
+    <select id="policy">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="mixed">Mixed</option>
+    </select>
+    <button type="submit">Add Hostel</button>
+  </form>
+
+  <form id="roomForm">
+    <select id="roomHostel"></select>
+    <input type="text" id="roomNumber" placeholder="Room Number" required>
+    <input type="number" id="capacity" placeholder="Capacity" required>
+    <button type="submit">Add Room</button>
+  </form>
+
+  <button onclick="runAllocation()">Run Allocation</button>
+
+  <h3>Allocations</h3>
+  <div id="allocBox"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
